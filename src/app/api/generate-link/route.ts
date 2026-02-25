@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { dbSavePagina } from "@/lib/db";
+import { dbSaveCliente } from "@/lib/db";
 import { autenticado } from "@/lib/session";
 
 export async function POST(req: NextRequest) {
@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
     const url     = `${baseUrl}/${slug}`;
 
-    await dbSavePagina({ slug, nome, url });
+    await dbSaveCliente({ slug, nome, url });
     return NextResponse.json({ slug, url, nome });
   } catch (err) {
     console.error("[generate-link]", err);
