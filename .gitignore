@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Next.js build
+.next/
+out/
+
+# ENV — NUNCA sobe para o git
+.env
+.env.local
+.env.*.local
+.env.production
+
+# Banco SQLite — dados ficam no servidor, não no git
+data/
+
+# Debug
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
